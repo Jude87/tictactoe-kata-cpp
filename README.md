@@ -5,8 +5,11 @@
 ## Contents<a name="contents----"></a>
 
 * [Introduction](#introduction)
-* [Run tests on Ubuntu](#run-tests-on-ubuntu)
-* [Run tests for solution proposal](#run-tests-for-solution-proposal)
+* [Folder structure](#folder-structure)
+* [Run console game](#run-console-game)
+* [Solution proposal](#solution-proposal)
+    * [Run tests (solution proposal)](#run-tests-solution-proposal)
+    * [Run console game (solution proposal)](#run-console-game-solution-proposal)
 * [Coding kata](#coding-kata)
     * [Step 1](#step-1)
     * [Step 2](#step-2)
@@ -61,9 +64,22 @@ Player `O` makes a winning move by putting a marker in the lower left corner:
     OOO
     Player O wins!
 
-## Run tests on Ubuntu<a name="run-tests-on-ubuntu"></a>
+## Folder structure<a name="folder-structure"></a>
 
-CMake version 3.5 or higher is required to build the tests.
+* `3rdparty` contains the [Catch2](https://github.com/catchorg/Catch2) test frame work
+
+* `solution` contains one possible solution to the kata. You can take a peek if you get stuck.
+
+* `src` contains the code. Initially it contains a dummy function that alwas returns `true`.
+  * Add new code to `src/tictactoe.hpp` and `src/tictactoe.cpp`.
+  * The final console application is run from `src/main_src.cpp.`. You must add code to this file in the last step of the kata.
+  
+* `tests` contains the tests. Initially it contains a dummy test.
+  * You should add new tests to `tests/test_tictactoe.cpp`
+
+ ## Run tests
+
+The following commands have been verified on Ubuntu. CMake version 3.5 or higher is required to build the tests.
 
 1. Clone repository
 
@@ -86,11 +102,19 @@ CMake version 3.5 or higher is required to build the tests.
 
         $ tests/tictactoe_tests
         
-## Run tests for solution proposal<a name="run-tests-for-solution-proposal"></a>
+## Run console game<a name="run-console-game"></a>
+
+1. Complete the clone and build steps in the previous section.
+1. Run console game
+
+        $ cd git/tictactoe-kata-cpp/build
+        $ src/tictactoe        
+        
+## Solution proposal<a name="solution-proposal"></a>
 
 There is a folder named `solution` that contains one possible solution for the kata.
 
-Build and run tests for solution proposal: 
+### Run tests (solution proposal)<a name="run-tests-solution-proposal"></a>
         
 1. Complete the clone and build steps in the previous section.
 1. List available tests
@@ -100,6 +124,14 @@ Build and run tests for solution proposal:
 1. Run tests
 
         $ solution/tests/tictactoe_tests_solution        
+
+### Run console game (solution proposal)<a name="run-console-game-solution-proposal"></a>
+
+1. Complete the clone and build steps in the previous section.
+1. Run console game
+
+        $ cd git/tictactoe-kata-cpp/build
+        $ solution/src/tictactoe_solution
 
 ## Coding kata<a name="coding-kata"></a>
 
