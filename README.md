@@ -4,6 +4,24 @@
 
 ## Contents<a name="contents----"></a>
 
+* [Introduction](#introduction)
+* [Run tests on Ubuntu](#run-tests-on-ubuntu)
+* [Run tests for solution proposal](#run-tests-for-solution-proposal)
+* [Coding kata](#coding-kata)
+    * [Step 1](#step-1)
+    * [Step 2](#step-2)
+    * [Step 3](#step-3)
+    * [Step 4](#step-4)
+    * [Step 5](#step-5)
+    * [Step 6](#step-6)
+    * [Step 7](#step-7)
+    * [Step 8](#step-8)
+    * [Step 9](#step-9)
+    * [Step 10](#step-10)
+    * [Step 11](#step-11)
+    * [Step 12](#step-12)
+    * [Step 13](#step-13)
+
 ## Introduction<a name="introduction"></a>
 
 The goal of this kata is to develop a class named `TicTacToe` that let us play the Tic-tac-toe game. Wikipedia has the following description of the game:
@@ -43,7 +61,7 @@ Player `O` makes a winning move by putting a marker in the lower left corner:
     OOO
     Player O wins!
 
-## Run tests on Ubuntu
+## Run tests on Ubuntu<a name="run-tests-on-ubuntu"></a>
 
 CMake version 3.5 or higher is required to build the tests.
 
@@ -68,7 +86,7 @@ CMake version 3.5 or higher is required to build the tests.
 
         $ tests/tictactoe_tests
         
-## Run tests for solution proposal
+## Run tests for solution proposal<a name="run-tests-for-solution-proposal"></a>
 
 There is a folder named `solution` that contains one possible solution for the kata.
 
@@ -219,7 +237,7 @@ You will have to change multiple things to make this test pass:
 1. Add a `play()` method to update the internal representation of the board when adding a player symbol to a specific position on the board.
 1. Update the `to_string()` method to use the internal representation of the board when producing the string.
 
-### Step 6
+### Step 6<a name="step-6"></a>
 
 It would be handy if the `TicTactoe` class implements an overload of the `play` method that accepts a string as input. This can be used later when running the Tic-tac-toe game in the console.
 
@@ -240,7 +258,7 @@ Add the following test:
     
 Now add the corresponding implementation to make it pass.
 
-### Step 7
+### Step 7<a name="step-7"></a>
 
 We want the `TicTacToe` class to check if we have a winner across the board and print out the winner in its string representation. Add a test and corresponding implementation to produce the following behavior. 
 
@@ -262,7 +280,7 @@ We want the `TicTacToe` class to check if we have a winner across the board and 
         REQUIRE(t.to_string() == expected_board);
     }
 
-### Step 8
+### Step 8<a name="step-8"></a>
 
 We also want the `TicTacToe` class to check if we have a winner vertically on the board and print out the winner in its string representation.
 
@@ -286,13 +304,13 @@ We also want the `TicTacToe` class to check if we have a winner vertically on th
 
 Go ahead and add a test to fix the above!
 
-### Step 9
+### Step 9<a name="step-9"></a>
 
 Finally `TicTacToe` shall find winners both on left-to-right diagonal and right-to-left diagonal on the board and print out the winner in its string representation.
 
 Add tests to check the diagonals and the corresponding implementation in `TicTacToe`.
 
-### Step 10
+### Step 10<a name="step-10"></a>
 
 Now let's add some error handling to `TicTacToe`. We want to throw an exception if we try to play on the same position twice.
 
@@ -304,11 +322,11 @@ Now let's add some error handling to `TicTacToe`. We want to throw an exception 
         REQUIRE_THROWS_AS( t.play(std::string{"X"}, tictactoe::Position(1, 1)), tictactoe::CellNotEmpty );
     }
 
-### Step 11
+### Step 11<a name="step-11"></a>
 
 We also want to throw an exception if the same player tries to play two times in a row.
 
-### Step 12
+### Step 12<a name="step-12"></a>
 
 The `TicTacToe` class shall recognize a tie, i.e. when the board is full and there is no player with three marks in a row (up, down, across or diagonally).
 
@@ -334,7 +352,7 @@ The `TicTacToe` class shall recognize a tie, i.e. when the board is full and the
         REQUIRE(t.to_string() == expected_board);
     }
 
-### Step 13
+### Step 13<a name="step-13"></a>
 
 If you reached this far you can think about how to make use of your `TicTacToe` class in an interactive console application that let you and another person play tic-tac-toe against each other.
 
