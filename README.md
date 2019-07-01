@@ -6,10 +6,13 @@
 
 * [Introduction](#introduction)
 * [Folder structure](#folder-structure)
+* [Prerequisites](#prerequisites)
+* [Run tests](#run-tests)
 * [Run console game](#run-console-game)
 * [Solution proposal](#solution-proposal)
     * [Run tests (solution proposal)](#run-tests-solution-proposal)
     * [Run console game (solution proposal)](#run-console-game-solution-proposal)
+* [Visual Studio 2019](#visual-studio-2019)
 * [Coding kata](#coding-kata)
     * [Step 1](#step-1)
     * [Step 2](#step-2)
@@ -77,9 +80,14 @@ Player `O` makes a winning move by putting a marker in the lower left corner:
 * `tests` contains the tests. Initially it contains a dummy test.
   * You should add new tests to `tests/test_tictactoe.cpp`
 
- ## Run tests
+## Prerequisites<a name="prerequisites"></a>
 
-The following commands have been verified on Ubuntu. CMake version 3.5 or higher is required to build the tests.
+* CMake 3.5 or higher
+* C++ compiler that support C++17
+
+## Run tests<a name="run-tests"></a>
+
+The following commands have been verified on Ubuntu 18.04.
 
 1. Clone repository
 
@@ -132,6 +140,10 @@ There is a folder named `solution` that contains one possible solution for the k
 
         $ cd git/tictactoe-kata-cpp/build
         $ solution/src/tictactoe_solution
+        
+## Visual Studio 2019<a name="visual-studio-2019"></a>
+
+The git repostiory has been successfully opened in Visual Studio 2019 using the built in CMake support.
 
 ## Coding kata<a name="coding-kata"></a>
 
