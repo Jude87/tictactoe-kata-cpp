@@ -1,5 +1,4 @@
 #include "tictactoe.hpp"
-#include <sstream>
 
 namespace tictactoe {
 
