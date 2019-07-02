@@ -153,19 +153,19 @@ Now we can start with the kata itself. Follow the steps below one by one to deve
 
 Let's start by developing a helper class named `Position` that can be used to specify a position on the game board using x- and y-coordinates.
 
-        012 x-axis 
+        012 y-axis 
       0 ---
       1 ---
       2 ---
-    y-axis 
+    x-axis 
     
 Putting a `X` mark at `[x=1, y=0]`:
 
-        012 x-axis
-      0 -X-
-      1 ---
+        012 y-axis
+      0 -0-
+      1 X--
       2 ---
-    y-axis    
+    x-axis    
 
 Add the following test to `test_tictactoe.cpp`:
 
