@@ -16,3 +16,14 @@ TEST_CASE("test_can_accept_other_coords", "[tictactoe]") {
     std::cout << p.to_string() << std::endl;
     REQUIRE(p.to_string() == "[1,2]");
 }
+
+TEST_CASE("test_create_tictactoe_with_empty_board", "[tictactoe]") {
+    auto t = tictactoe::TicTacToe();
+
+    std::string expected_board;
+    expected_board += "---\n";
+    expected_board += "---\n";
+    expected_board += "---\n";
+
+    REQUIRE(t.to_string() == expected_board);
+}

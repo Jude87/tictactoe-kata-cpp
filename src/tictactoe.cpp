@@ -15,4 +15,14 @@ namespace tictactoe {
         return ss.str();
     }
 
+    std::string TicTacToe::to_string() const{
+        std::string board;
+
+        board += "---\n";
+        board += "---\n";
+        board += "---\n";
+
+        return board;
+    }
+
 }
