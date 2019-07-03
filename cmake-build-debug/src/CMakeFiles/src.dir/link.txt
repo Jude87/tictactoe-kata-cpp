@@ -1,0 +1,2 @@
+C:\Rtools\mingw_32\bin\ar.exe qc libsrc.a  CMakeFiles/src.dir/tictactoe.cpp.obj
+C:\Rtools\mingw_32\bin\ranlib.exe libsrc.a

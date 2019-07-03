@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/solution/src/tictactoe_solution.cpp
+vector
+-
+algorithm
+-
+iostream
+-
+sstream
+-
+tictactoe_solution.hpp
+C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/solution/src/tictactoe_solution.hpp
+
+C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/solution/src/tictactoe_solution.hpp
+ostream
+-
+vector
+-
+
