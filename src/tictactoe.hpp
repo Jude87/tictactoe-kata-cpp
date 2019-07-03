@@ -15,10 +15,12 @@ namespace tictactoe {
     };
     //class Position end
 
+    //class TicTacToe begin
     class TicTacToe{
     public:
         std::string to_string() const;
     };
+    //class TicTacToe end
 }
 
 #endif //TICTACTOE_HPP

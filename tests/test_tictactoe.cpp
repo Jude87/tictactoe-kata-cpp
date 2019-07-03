@@ -27,3 +27,16 @@ TEST_CASE("test_create_tictactoe_with_empty_board", "[tictactoe]") {
 
     REQUIRE(t.to_string() == expected_board);
 }
+
+TEST_CASE("test_play_o_marker_uppper_left", "[tictactoe]") {
+    auto t = tictactoe::TicTacToe();
+
+    t.play(std::string{"O"}, tictactoe::Position(0, 0));
+
+    std::string expected_board;
+    expected_board += "O--\n";
+    expected_board += "---\n";
+    expected_board += "---\n";
+
+    REQUIRE(t.to_string() == expected_board);
+}
