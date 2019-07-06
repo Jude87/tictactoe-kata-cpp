@@ -1,5 +1,7 @@
-#include "tictactoe.hpp"
 #include <sstream>
+#include <vector>
+#include <string>
+#include "tictactoe.hpp"
 
 namespace tictactoe {
 
@@ -22,7 +24,20 @@ namespace tictactoe {
         board += "---\n";
         board += "---\n";
 
+        for(const auto &boardRow : _board){
+            for(const auto &posElem : boardRow){
+                board += posElem;
+            }
+            board += "\n";
+        }
+
         return board;
+    }
+
+    void TicTacToe::play(std::string marker, Position p){
+
+        _board[p._x][p._y] = marker[0];
+
     }
 
 }
