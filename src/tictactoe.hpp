@@ -23,7 +23,9 @@ namespace tictactoe {
     public:
         TicTacToe();
         std::string to_string() const;
+        std::vector<int> filterPosition(std::string);
         void play(std::string marker, Position p);
+        void play(std::string move);
     };
     //class TicTacToe end
 }

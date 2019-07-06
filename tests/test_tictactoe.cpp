@@ -40,3 +40,16 @@ TEST_CASE("test_play_o_marker_uppper_left", "[tictactoe]") {
 
     REQUIRE(t.to_string() == expected_board);
 }
+
+TEST_CASE("test_play_x_marker_uppper_left_using_string_input", "[tictactoe]") {
+    auto t = tictactoe::TicTacToe();
+
+    t.play("X,0,0");
+
+    std::string expected_board;
+    expected_board += "X--\n";
+    expected_board += "---\n";
+    expected_board += "---\n";
+
+    REQUIRE(t.to_string() == expected_board);
+}

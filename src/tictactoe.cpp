@@ -18,7 +18,7 @@ namespace tictactoe {
         return ss.str();
     }
 
-    //TicTacToe class methoc implementation
+    //TicTacToe class methods implementation
 
     TicTacToe::TicTacToe():_board{{'-','-','-'},{'-','-','-'},{'-','-','-'}}{}
 
@@ -39,6 +39,32 @@ namespace tictactoe {
 
         _board[p._x][p._y] = marker[0];
 
+    }
+
+    std::vector<int> TicTacToe::filterPosition(std::string position){
+        std::vector<int> pvalues;
+        int streamed;
+
+        for(int i = 1; i < position.length(); i++){
+            if(position[i] != ','){
+                std::stringstream str;
+                str << position[i];
+                str >> streamed;
+                pvalues.push_back(streamed);
+            }
+        }
+
+        return  pvalues;
+    }
+
+    void TicTacToe::play(std::string move){
+        const char marker{move[0]};
+        std::vector<int> move_elements = filterPosition(move);
+
+        int xcoord = move_elements[0];
+        int ycoord = move_elements[1];
+
+        _board[xcoord][ycoord] = marker;
     }
 
 }
