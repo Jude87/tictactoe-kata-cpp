@@ -21,11 +21,9 @@ namespace tictactoe {
         using GameBoard = std::vector<std::vector<char>>;
         GameBoard _board;
     public:
+        TicTacToe();
         std::string to_string() const;
         void play(std::string marker, Position p);
-        std::vector<std::vector<char>> getGameBoard(){
-            return _board;
-        }
     };
     //class TicTacToe end
 }

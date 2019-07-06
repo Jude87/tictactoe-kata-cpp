@@ -9,6 +9,7 @@ namespace tictactoe {
         return true;
     }
 
+    //Position class methods implementation
     Position::Position(int x, int y):_x{x},_y{y}{}
 
     std::string Position::to_string() const {
@@ -17,12 +18,12 @@ namespace tictactoe {
         return ss.str();
     }
 
+    //TicTacToe class methoc implementation
+
+    TicTacToe::TicTacToe():_board{{'-','-','-'},{'-','-','-'},{'-','-','-'}}{}
+
     std::string TicTacToe::to_string() const{
         std::string board;
-
-        board += "---\n";
-        board += "---\n";
-        board += "---\n";
 
         for(const auto &boardRow : _board){
             for(const auto &posElem : boardRow){

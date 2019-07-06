@@ -7,10 +7,14 @@
 #IncludeRegexTransform: 
 
 C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/src/tictactoe.cpp
-tictactoe.hpp
-C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/src/tictactoe.hpp
 sstream
 -
+vector
+-
+string
+-
+tictactoe.hpp
+C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/src/tictactoe.hpp
 
 C:/Users/Jude/CLionProjects/tictactoe-kata-cpp/src/tictactoe.hpp
 string
