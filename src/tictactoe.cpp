@@ -19,7 +19,6 @@ namespace tictactoe {
     }
 
     //TicTacToe class methods implementation
-
     TicTacToe::TicTacToe():_board{{'-','-','-'},{'-','-','-'},{'-','-','-'}},_lastPlayer{'#'}{}
 
     std::string TicTacToe::checkWin(std::string currentBoard)const{
@@ -90,7 +89,14 @@ namespace tictactoe {
     void TicTacToe::play(std::string marker, Position p){
 
         setLastPlayer(marker[0]);
-        _board[p._x][p._y] = marker[0];
+        //Check if cell is empty before accepting play. Else throw exception
+        if(_board[p._x][p._y] == EMPTY_POSITION){
+
+            _board[p._x][p._y] = marker[0];
+
+        }else{
+            throw CellNotEmpty();
+        }
 
     }
 
@@ -118,7 +124,14 @@ namespace tictactoe {
         int xcoord = move_elements[0];
         int ycoord = move_elements[1];
 
-        _board[xcoord][ycoord] = marker;
+        //Check if cell is empty before accepting play. Else throw exception
+        if( _board[xcoord][ycoord] == EMPTY_POSITION){
+
+            _board[xcoord][ycoord] = marker;
+
+        }else{
+            throw CellNotEmpty();
+        }
     }
 
     void TicTacToe::setLastPlayer(char lastPlayerMarker){

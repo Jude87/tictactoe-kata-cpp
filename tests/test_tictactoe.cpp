@@ -125,3 +125,11 @@ TEST_CASE("test_detect_winner_diagonally_right_to_left", "[tictactoe]") {
 
     REQUIRE(t.to_string() == expected_board);
 }
+
+TEST_CASE("test_play_same_cell_twice_throws_exception", "[tictactoe]") {
+    tictactoe::TicTacToe t;
+
+    t.play(std::string{"O"}, tictactoe::Position(1, 1));
+
+    REQUIRE_THROWS_AS(t.play(std::string{"X"}, tictactoe::Position(1, 1)), tictactoe::CellNotEmpty);
+}

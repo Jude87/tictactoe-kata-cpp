@@ -6,6 +6,8 @@
 namespace tictactoe {
     bool always_true();
 
+    class CellNotEmpty : public std::exception{};
+
     //class Position begin
     class Position{
     public:
@@ -22,6 +24,7 @@ namespace tictactoe {
         GameBoard _board;
         char _lastPlayer;
     public:
+        const char EMPTY_POSITION = '-';
         TicTacToe();
         std::string to_string() const;
         std::vector<int> filterPosition(std::string);
