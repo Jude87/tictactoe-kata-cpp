@@ -25,9 +25,11 @@ namespace tictactoe {
     std::string TicTacToe::checkWin(std::string currentBoard)const{
         std::string xWins = "XXX";
         std::string oWins = "OOO";
+        //horizontal win check
         std::string case1 = currentBoard.substr(0,3);
         std::string case2 = currentBoard.substr(3,3);
         std::string case3 = currentBoard.substr(6,3);
+        //vertical/diagonal win check
         std::string case4, case5, case6, case7, case8;
         for(int i = 0; i < 9; i++){
             if(i == 0 || i == 3 || i == 6){

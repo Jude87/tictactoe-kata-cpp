@@ -89,3 +89,21 @@ TEST_CASE("test_detect_winner_vertically", "[tictactoe]") {
 
     REQUIRE(t.to_string() == expected_board);
 }
+
+TEST_CASE("test_detect_winner_diagonally_left_to_right", "[tictactoe]") {
+    tictactoe::TicTacToe t;
+
+    t.play(std::string{"X"}, tictactoe::Position(0, 0));
+    t.play(std::string{"O"}, tictactoe::Position(0, 1));
+    t.play(std::string{"X"}, tictactoe::Position(1, 1));
+    t.play(std::string{"O"}, tictactoe::Position(1, 2));
+    t.play(std::string{"X"}, tictactoe::Position(2, 2));
+
+    std::string expected_board;
+    expected_board += "XO-\n";
+    expected_board += "-XO\n";
+    expected_board += "--X\n";
+    expected_board += "Player X wins!\n";
+
+    REQUIRE(t.to_string() == expected_board);
+}
