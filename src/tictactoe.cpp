@@ -63,15 +63,17 @@ namespace tictactoe {
 
     std::string TicTacToe::to_string() const{
         std::string board;
+        std::string boardTestSample;
 
         for(const auto &boardRow : _board){
             for(const auto &posElem : boardRow){
                 board += posElem;
+                boardTestSample += posElem;
             }
             board += "\n";
         }
 
-        std::string winCheck = checkWin(board);
+        std::string winCheck = checkWin(boardTestSample);
 
         if(winCheck == "WIN_REGISTERED"){
             char winner = getLastPlayer();
