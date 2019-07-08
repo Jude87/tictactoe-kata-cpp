@@ -53,3 +53,21 @@ TEST_CASE("test_play_x_marker_uppper_left_using_string_input", "[tictactoe]") {
 
     REQUIRE(t.to_string() == expected_board);
 }
+
+TEST_CASE("test_detect_winner_across", "[tictactoe]") {
+    tictactoe::TicTacToe t;
+
+    t.play(std::string{"O"}, tictactoe::Position(0, 0));
+    t.play(std::string{"X"}, tictactoe::Position(1, 0));
+    t.play(std::string{"O"}, tictactoe::Position(0, 1));
+    t.play(std::string{"X"}, tictactoe::Position(2, 0));
+    t.play(std::string{"O"}, tictactoe::Position(0, 2));
+
+    std::string expected_board;
+    expected_board += "OOO\n";
+    expected_board += "X--\n";
+    expected_board += "X--\n";
+    expected_board += "Player O wins!\n";
+
+    REQUIRE(t.to_string() == expected_board);
+}

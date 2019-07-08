@@ -20,12 +20,16 @@ namespace tictactoe {
     private:
         using GameBoard = std::vector<std::vector<char>>;
         GameBoard _board;
+        char _lastPlayer;
     public:
         TicTacToe();
         std::string to_string() const;
         std::vector<int> filterPosition(std::string);
         void play(std::string marker, Position p);
         void play(std::string move);
+        void setLastPlayer(char);
+        char getLastPlayer()const{return _lastPlayer;}
+        std::string checkWin(std::string)const;
     };
     //class TicTacToe end
 }
