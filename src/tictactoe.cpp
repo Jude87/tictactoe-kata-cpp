@@ -62,6 +62,14 @@ namespace tictactoe {
         }
     }
 
+    std::string TicTacToe::checkEmptyPositions(std::string boardString)const{
+        auto found = boardString.find(EMPTY_POSITION);
+
+        if(found == std::string::npos){
+            return "NO_EMPTY_POSITIONS";
+        }
+    }
+
     std::string TicTacToe::to_string() const{
         std::string board;
         std::string boardTestSample;
@@ -81,6 +89,12 @@ namespace tictactoe {
             board += "Player ";
             board.push_back(winner);
             board += " wins!\n";
+        }
+
+        std::string vacancyCheck = checkEmptyPositions(boardTestSample);
+
+        if(winCheck == "NO_WIN_REGISTERED" && vacancyCheck == "NO_EMPTY_POSITIONS"){
+            board += "Tie!\n";
         }
 
         return board;

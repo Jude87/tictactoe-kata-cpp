@@ -141,3 +141,25 @@ TEST_CASE("test_same_player_plays_twice_throws_exception", "[tictactoe]") {
 
     REQUIRE_THROWS_AS(t.play(std::string{"O"}, tictactoe::Position(1, 2)), tictactoe::SamePlayerPlayedTwice);
 }
+
+TEST_CASE("test_detect_tie", "[tictactoe]") {
+    tictactoe::TicTacToe t;
+
+    t.play(std::string{'O'}, tictactoe::Position(0, 0));
+    t.play(std::string{'X'}, tictactoe::Position(0, 1));
+    t.play(std::string{'O'}, tictactoe::Position(0, 2));
+    t.play(std::string{'X'}, tictactoe::Position(1, 1));
+    t.play(std::string{'O'}, tictactoe::Position(1, 0));
+    t.play(std::string{'X'}, tictactoe::Position(1, 2));
+    t.play(std::string{'O'}, tictactoe::Position(2, 1));
+    t.play(std::string{'X'}, tictactoe::Position(2, 0));
+    t.play(std::string{'O'}, tictactoe::Position(2, 2));
+
+    std::string expected_board;
+    expected_board += "OXO\n";
+    expected_board += "OXX\n";
+    expected_board += "XOO\n";
+    expected_board += "Tie!\n";
+
+    REQUIRE(t.to_string() == expected_board);
+}

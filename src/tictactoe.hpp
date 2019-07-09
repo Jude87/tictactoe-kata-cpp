@@ -34,6 +34,7 @@ namespace tictactoe {
         void setLastPlayer(char);
         char getLastPlayer()const{return _lastPlayer;}
         std::string checkWin(std::string)const;
+        std::string checkEmptyPositions(std::string)const;
     };
     //class TicTacToe end
 }
