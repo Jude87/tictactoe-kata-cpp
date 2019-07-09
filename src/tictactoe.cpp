@@ -88,11 +88,15 @@ namespace tictactoe {
 
     void TicTacToe::play(std::string marker, Position p){
 
-        setLastPlayer(marker[0]);
         //Check if cell is empty before accepting play. Else throw exception
         if(_board[p._x][p._y] == EMPTY_POSITION){
-
-            _board[p._x][p._y] = marker[0];
+        //Check if the same player is playing twice in a row
+            if(_lastPlayer == marker[0]){
+                throw SamePlayerPlayedTwice();
+            }else{
+                _board[p._x][p._y] = marker[0];
+                setLastPlayer(marker[0]);
+            }
 
         }else{
             throw CellNotEmpty();
@@ -118,7 +122,7 @@ namespace tictactoe {
 
     void TicTacToe::play(std::string move){
         const char marker{move[0]};
-        setLastPlayer(move[0]);
+
         std::vector<int> move_elements = filterPosition(move);
 
         int xcoord = move_elements[0];
@@ -126,9 +130,13 @@ namespace tictactoe {
 
         //Check if cell is empty before accepting play. Else throw exception
         if( _board[xcoord][ycoord] == EMPTY_POSITION){
-
-            _board[xcoord][ycoord] = marker;
-
+            //Check if the same player is playing twice in a row
+            if(_lastPlayer == marker){
+                throw SamePlayerPlayedTwice();
+            }else{
+                _board[xcoord][ycoord] = marker;
+                setLastPlayer(marker);
+            }
         }else{
             throw CellNotEmpty();
         }

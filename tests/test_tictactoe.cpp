@@ -133,3 +133,11 @@ TEST_CASE("test_play_same_cell_twice_throws_exception", "[tictactoe]") {
 
     REQUIRE_THROWS_AS(t.play(std::string{"X"}, tictactoe::Position(1, 1)), tictactoe::CellNotEmpty);
 }
+
+TEST_CASE("test_same_player_plays_twice_throws_exception", "[tictactoe]") {
+    tictactoe::TicTacToe t;
+
+    t.play(std::string{"O"}, tictactoe::Position(1, 1));
+
+    REQUIRE_THROWS_AS(t.play(std::string{"O"}, tictactoe::Position(1, 2)), tictactoe::SamePlayerPlayedTwice);
+}

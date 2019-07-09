@@ -7,6 +7,7 @@ namespace tictactoe {
     bool always_true();
 
     class CellNotEmpty : public std::exception{};
+    class SamePlayerPlayedTwice : public std::exception{};
 
     //class Position begin
     class Position{
